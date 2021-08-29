@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CC741FF-012B-4180-AAED-68A98B97E06E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarsFramework</RootNamespace>
+    <AssemblyName>MarsFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoItX3.Assembly, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a646454c8d475470, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoItX.Dotnet.3.3.14.5\lib\AutoItX3.Assembly.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.9.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.9.0\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.1.0.145, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.1.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.7.3\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.7.3\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.7.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="RelevantCodes.ExtentReports, Version=1.4.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtentReports.2.41.0\lib\RelevantCodes.ExtentReports.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\MarsResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Base.cs" />
+    <Compile Include="Global\ExtentionBase.cs" />
+    <Compile Include="Global\GlobalDefinitions.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.5.2.AssemblyAttributes.cs" />
+    <Compile Include="Pages\ManageListings.cs" />
+    <Compile Include="Pages\ShareSkill.cs" />
+    <Compile Include="Pages\SignIn.cs" />
+    <Compile Include="Pages\SignUp.cs" />
+    <Compile Include="Pages\Profile.cs" />
+    <Compile Include="Test\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\MarsResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MarsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ExcelData\TestData.xlsx" />
+    <None Include="ExcelData\TestDataManageListings.xlsx" />
+    <None Include="ExcelData\ShareSkills.xlsx" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="packages.config" />
+    <None Include="TestReports\ExtentReports 2.0_files\css" />
+    <None Include="TestReports\ExtentReports 2.0_files\Extent reports8_21_2021 9_00_23 AM" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\MarsFramework.dll" />
+    <Content Include="bin\Debug\MarsFramework.pdb" />
+    <Content Include="chromedriver.exe" />
+    <Content Include="Config\XMLFile.xml" />
+    <Content Include="obj\Debug\TempPE\Config.MarsResource.Designer.cs.dll" />
+    <Content Include="TestReports\ExtentReports 2.0_files\1.png" />
+    <Content Include="TestReports\ExtentReports 2.0_files\2.png" />
+    <Content Include="TestReports\ExtentReports 2.0_files\dashboard.html" />
+    <Content Include="TestReports\ExtentReports 2.0_files\extent.css" />
+    <Content Include="TestReports\ExtentReports 2.0_files\extent.js" />
+    <Content Include="TestReports\ExtentReports 2.0_files\index.html" />
+    <Content Include="TestReports\ExtentReports\dashboard.html" />
+    <Content Include="TestReports\ExtentReports\index.html" />
+    <Content Include="TestReports\MarsReports.html" />
+    <Content Include="TestReports\Report.html" />
+    <Content Include="TestReports\Screenshots\ReportsDeleteListing_22-16-2021_1645.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsDeleteListing_22-54-2021_5439.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-02-2021_221.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-03-2021_310.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-05-2021_501.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-06-2021_641.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-06-2021_651.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-09-2021_914.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-10-2021_1009.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-11-2021_1127.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-14-2021_1439.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-15-2021_1503.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-15-2021_1553.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-16-2021_1643.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-17-2021_1704.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-29-2021_2944.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-29-2021_2953.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-34-2021_3421.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-35-2021_3550.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-37-2021_3705.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-37-2021_3751.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-38-2021_3844.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-39-2021_3945.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-40-2021_4000.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-47-2021_4739.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-53-2021_5355.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-54-2021_5437.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-55-2021_5558.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-58-2021_5843.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_22-59-2021_5948.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_23-09-2021_903.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_23-09-2021_913.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_23-17-2021_1738.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_23-17-2021_1748.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_23-52-2021_5249.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsManageListngs_23-52-2021_5259.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-02-2021_225.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-05-2021_504.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-05-2021_511.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-06-2021_604.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-06-2021_612.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-06-2021_634.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-06-2021_644.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-06-2021_657.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-09-2021_921.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-09-2021_941.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-10-2021_1012.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-11-2021_1129.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-12-2021_1208.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-12-2021_1235.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-15-2021_1506.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-16-2021_1602.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-18-2021_1852.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-21-2021_2143.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-22-2021_2242.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-23-2021_2325.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-26-2021_2636.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-29-2021_2947.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-37-2021_3753.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-42-2021_4248.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-45-2021_4503.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-45-2021_4551.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-46-2021_4614.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-51-2021_5120.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-56-2021_5602.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-58-2021_5845.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-59-2021_5933.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_22-59-2021_5955.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-08-2021_823.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-08-2021_855.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-09-2021_906.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-09-2021_919.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-17-2021_1701.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-17-2021_1731.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-17-2021_1741.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-17-2021_1754.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-19-2021_1910.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-20-2021_2028.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-21-2021_2141.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-23-2021_2316.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-24-2021_2429.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-26-2021_2606.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-27-2021_2742.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-28-2021_2833.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-30-2021_3013.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-32-2021_3204.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-33-2021_3344.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-34-2021_3435.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-35-2021_3541.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-36-2021_3640.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-51-2021_5110.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-52-2021_5208.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-52-2021_5242.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-52-2021_5251.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsReport_23-53-2021_5305.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-04-2021_417.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-04-2021_445.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-05-2021_537.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-05-2021_543.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-06-2021_611.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-06-2021_643.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-08-2021_844.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-09-2021_913.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-11-2021_1130.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-11-2021_1137.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-12-2021_1205.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-13-2021_1302.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-13-2021_1344.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-13-2021_1353.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-14-2021_1427.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-15-2021_1533.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-15-2021_1547.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-16-2021_1623.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-18-2021_1825.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-19-2021_1927.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-21-2021_2125.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-22-2021_2224.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-22-2021_2258.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-24-2021_2458.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-26-2021_2610.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-29-2021_2908.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-30-2021_3039.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-34-2021_3416.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-35-2021_3503.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-35-2021_3521.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-38-2021_3832.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-39-2021_3905.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-43-2021_4340.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-48-2021_4845.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-51-2021_5100.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-52-2021_5212.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-55-2021_5559.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-57-2021_5742.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_22-59-2021_5910.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-07-2021_757.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-08-2021_831.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-16-2021_1635.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-17-2021_1709.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-18-2021_1841.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-20-2021_2002.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-21-2021_2114.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-22-2021_2250.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-24-2021_2402.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-25-2021_2540.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-27-2021_2717.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-28-2021_2807.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-29-2021_2947.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-31-2021_3139.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-34-2021_3409.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-36-2021_3614.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-50-2021_5045.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-51-2021_5140.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsShareSkill_23-52-2021_5217.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-04-2021_444.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-05-2021_511.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-06-2021_604.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-06-2021_612.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-07-2021_710.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-09-2021_915.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-09-2021_940.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-12-2021_1208.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-12-2021_1209.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-13-2021_1328.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-14-2021_1405.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-14-2021_1420.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-16-2021_1601.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-16-2021_1649.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-19-2021_1948.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-23-2021_2325.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-25-2021_2526.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-26-2021_2636.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-29-2021_2934.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-31-2021_3106.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-35-2021_3511.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-35-2021_3528.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-38-2021_3858.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-39-2021_3931.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-44-2021_4402.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-49-2021_4906.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-56-2021_5627.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_22-58-2021_5808.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_23-08-2021_823.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_23-17-2021_1701.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_23-36-2021_3639.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsAddedSuccessfully_23-52-2021_5208.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsDeletedSuccessfully_22-06-2021_657.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsDeletedSuccessfully_22-14-2021_1445.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsDeletedSuccessfully_22-34-2021_3425.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsDeletedSuccessfully_22-47-2021_4745.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsDeletedSuccessfully_22-59-2021_5955.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsDeletedSuccessfully_23-09-2021_919.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsDeletedSuccessfully_23-17-2021_1754.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsDeletedSuccessfully_23-53-2021_5305.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsUpdatedSuccessfully_22-06-2021_634.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsUpdatedSuccessfully_22-35-2021_3543.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsUpdatedSuccessfully_22-59-2021_5933.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsUpdatedSuccessfully_23-08-2021_855.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsUpdatedSuccessfully_23-17-2021_1731.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsUpdatedSuccessfully_23-51-2021_5110.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsUpdatedSuccessfully_23-52-2021_5241.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsViewedSuccessfully_22-06-2021_644.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsViewedSuccessfully_22-58-2021_5845.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsViewedSuccessfully_23-09-2021_906.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsViewedSuccessfully_23-17-2021_1741.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsSkillsViewedSuccessfully_23-52-2021_5251.jpeg" />
+    <Content Include="TestReports\Screenshots\ReportsUpdateListing_22-52-2021_5232.jpeg" />
+    <Content Include="TestReports\Screenshots\Reports\ReportsShareSkill_22-16-2021_1634.jpeg" />
+    <Content Include="TestReports\Screenshots\Reports\ReportsSkillsAddedSuccessfully_22-16-2021_1655.jpeg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.92.0.4515.10700\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.92.0.4515.10700\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets'))" />
+  </Target>
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.92.0.4515.10700\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.92.0.4515.10700\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets" Condition="Exists('..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
